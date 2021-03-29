@@ -16,9 +16,9 @@ public class PuntApp {
 
     public PuntApp(GridPane root) {
 
-        invoerXLabel =  new Label("Geef de x-coördinaat van het punt ");
+        invoerXLabel =  new Label("Geef de x-coordinaat van het punt ");
         invoerX= new TextField();
-        invoerYLabel = new Label("Geef de y-coördinaat van het punt ");
+        invoerYLabel = new Label("Geef de y-coordinaat van het punt ");
         invoerY = new TextField();
 
         root.add(invoerXLabel,0,0);
@@ -33,7 +33,7 @@ public class PuntApp {
             catch(NumberFormatException e){
                 invoerX.clear();
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("x coÃ¶rdinaat moet een geheel getal zijn");
+                foutenboodschap.setContentText("x coordinaat moet een geheel getal zijn");
                 foutenboodschap.showAndWait();
             }
         });
@@ -51,7 +51,7 @@ public class PuntApp {
                 invoerY.clear();
 
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("y coÃ¶rdinaat moet een geheel getal zijn");
+                foutenboodschap.setContentText("y coordinaat moet een geheel getal zijn");
                 foutenboodschap.showAndWait();
             }
         });

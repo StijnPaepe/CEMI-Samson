@@ -23,16 +23,13 @@ public class Punt {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Punt punt = (Punt) o;
-        return x == punt.x && y == punt.y;
+        return x == punt.x &&
+                y == punt.y;
     }
 
     @Override
@@ -41,5 +38,8 @@ public class Punt {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+    public void setY(int y) {
+        this.y = y;
     }
 }
