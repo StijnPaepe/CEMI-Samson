@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Punt {
 
-    int x, y;
+    private int x, y;
 
     public Punt(int x, int y) {
         this.x = x;
@@ -34,11 +34,9 @@ public class Punt {
 
     @Override
     public String toString() {
-        return "Punt{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "(" + x + ", " + y + ")";
     }
+    
     public void setY(int y) {
         this.y = y;
     }
