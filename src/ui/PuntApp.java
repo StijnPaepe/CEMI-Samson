@@ -16,9 +16,9 @@ public class PuntApp {
 
     public PuntApp(GridPane root) {
 
-        invoerXLabel =  new Label("Geef de x-coÃ¶rdinaat van het punt ");
+        invoerXLabel =  new Label("Geef de x-coördinaat van het punt ");
         invoerX= new TextField();
-        invoerYLabel = new Label("Geef de y-coÃ¶rdinaat van het punt ");
+        invoerYLabel = new Label("Geef de y-coördinaat van het punt ");
         invoerY = new TextField();
 
         root.add(invoerXLabel,0,0);
