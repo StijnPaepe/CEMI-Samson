@@ -1,14 +1,11 @@
 package domain;
 
-import junit.framework.TestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ PuntTest.class, SpelerTest.class, CirkelTest.class, RechthoekTest.class})
+@SuiteClasses({CirkelTest.class, DriehoekTest.class, LijnStukTest.class, PuntTest.class, RechthoekTest.class, SpelerTest.class})
 
-public class AllTests {
-
-}
+public class AllTests {}
 

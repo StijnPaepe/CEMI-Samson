@@ -9,7 +9,7 @@ public class CirkelTest {
     private int geldigRadius;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         geldigMiddelpunt = new Punt(5,6);
         geldigRadius = 10;
     }
@@ -22,18 +22,18 @@ public class CirkelTest {
 
     }
 
-   @Test(expected = IllegalArgumentException.class)
-    public void test_Cirkel_metMiddelpuntisNull_GooiIllegalArgumentException(){
+   @Test(expected = DomainException.class)
+    public void test_Cirkel_metMiddelpuntIsNull_GooitDomainException(){
         new Cirkel(null, geldigRadius);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void test_Cirkel_metNegatieveStraal_GooiIllegalArgumentException(){
+    @Test(expected = DomainException.class)
+    public void test_Cirkel_metNegatieveStraal_GooitDomainException(){
         new Cirkel(geldigMiddelpunt, -4);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void test_Cirkel_metStraalis0_GooiIllegalArgumentException(){
+    @Test(expected = DomainException.class)
+    public void test_Cirkel_metStraalIs0_GooitDomainException(){
         new Cirkel(geldigMiddelpunt, 0);
     }
 
@@ -46,17 +46,16 @@ public class CirkelTest {
     }
 
     @Test
-    public void test_verschillendWanneerTweedeCirkelNullis(){
+    public void test_verschillendWanneerTweedeCirkelNullIs(){
         Cirkel cirkel1 = new Cirkel(geldigMiddelpunt, geldigRadius);
-        Cirkel cirkel2 = null;
-        assertFalse(cirkel1.equals(cirkel2));
+        assertNotEquals(cirkel1, null);
     }
 
     @Test
-    public void test_verschillendWanneerMiddelpuntVerschillendis() {
+    public void test_verschillendWanneerMiddelpuntVerschillendIs() {
         Cirkel cirkel1 = new Cirkel(new Punt(5, 6), geldigRadius);
         Cirkel cirkel2 = new Cirkel(new Punt(4, 7), geldigRadius);
-        assertFalse(cirkel1.equals(cirkel2));
+        assertNotEquals(cirkel1, cirkel2);
     }
 
 }

@@ -61,8 +61,8 @@ public class RechthoekApp {
         invoerBreedte.setOnAction(eventIngaveBreedte ->{
             try {
                 Integer.parseInt(invoerBreedte.getText());
-                root.add(invoerHoogteLabel, 0, 2);
-                root.add(invoerHoogte, 1, 2);
+                root.add(invoerHoogteLabel, 0, 3);
+                root.add(invoerHoogte, 1, 3);
             }
             catch(DomainException e){
                 invoerBreedte.clear();

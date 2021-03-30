@@ -1,5 +1,6 @@
 package ui.tijdelijk;
 
+import domain.Cirkel;
 import domain.DomainException;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -15,7 +16,7 @@ public class FxCirkelApp extends Application {
         GridPane root = new GridPane();
         Scene scene = new Scene(root, 300,50);
 
-        new SpelerApp(root);
+        new CirkelApp(root);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Cirkel App");
