@@ -1,4 +1,4 @@
-package ui.tijdelijk;
+package ui;
 
 import domain.*;
 import javafx.scene.control.Alert;

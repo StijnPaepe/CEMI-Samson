@@ -1,14 +1,10 @@
 package ui.tijdelijk;
 
-import domain.Driehoek;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import ui.DriehoekApp;
-import ui.LijnstukApp;
-import ui.RechthoekApp;
-import ui.tijdelijk.CirkelApp;
+import ui.CirkelApp;
 
 public class FiguurApp {
     private ComboBox<String> keuzeMenu;

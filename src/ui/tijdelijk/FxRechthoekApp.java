@@ -1,22 +1,23 @@
-package ui;
+package ui.tijdelijk;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import ui.tijdelijk.RechthoekApp;
 
-public class FxLijnstukApp extends Application {
+public class FxRechthoekApp extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
-        Scene scene = new Scene(root, 300,50);
+        Scene scene = new Scene(root, 500,300);
 
-        new LijnstukApp(root);
+        new RechthoekApp(root);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Lijnstuk App");
+        primaryStage.setTitle("Rechthoek App");
         primaryStage.show();
     }
 

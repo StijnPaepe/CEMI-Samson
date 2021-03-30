@@ -1,8 +1,9 @@
-package ui;
+package ui.tijdelijk;
 
 import domain.DomainException;
 import domain.Punt;
 import domain.Rechthoek;
+import domain.Tekening;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,6 +19,7 @@ public class RechthoekApp {
     private Rechthoek rechthoek;
 
     public RechthoekApp(GridPane root) {
+        init(root, 0);
         invoerXLabel =  new Label("Geef de x-coördinaat van de linkerbovenhoek van de rechthoek ");
         invoerX= new TextField();
         invoerYLabel = new Label("Geef de y-coördinaat van de linkerbovenhoek van de rechthoek ");
@@ -88,5 +90,39 @@ public class RechthoekApp {
                 foutenboodschap.showAndWait();
             }
         });
+    }
+
+    private void init(GridPane root, int i) {
+    }
+
+    private void cleanUp(GridPane root) {
+
+    }
+
+    public RechthoekApp(GridPane root, Tekening tekening) {
+       init(root, 1);
+       invoerHoogte.setOnAction(eventIngaveHoogte -> {
+           try {
+               Punt linkerbovenhoek = new Punt(Integer.parseInt(invoerX.getText()), Integer.parseInt(invoerY.getText()));
+               rechthoek = new Rechthoek(linkerbovenhoek, Integer.parseInt(invoerBreedte.getText()), Integer.parseInt(invoerHoogte.getText()));
+               tekening.voegToe(rechthoek);
+               cleanUp(root);
+
+           } catch (NumberFormatException ne){
+               invoerBreedte.clear();
+               invoerHoogte.clear();
+
+               foutenboodschap.setTitle("Warning");
+               foutenboodschap.setContentText("breedte en hoogte moet een geheel getal zijn");
+               foutenboodschap.showAndWait();
+           }
+           catch (DomainException e){
+               cleanUp(root);
+               foutenboodschap.setTitle("Warning");
+               foutenboodschap.setHeaderText(null);
+               foutenboodschap.setContentText(e.getMessage());
+               foutenboodschap.showAndWait();
+           }
+       });
     }
 }

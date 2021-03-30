@@ -1,4 +1,4 @@
-package ui;
+package ui.tijdelijk;
 
 import domain.Driehoek;
 import domain.Punt;

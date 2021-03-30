@@ -1,4 +1,4 @@
-package ui;
+package ui.tijdelijk;
 
 import domain.LijnStuk;
 import domain.Punt;
