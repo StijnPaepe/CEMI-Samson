@@ -1,5 +1,6 @@
 package ui.tijdelijk;
 
+import domain.Driehoek;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
@@ -12,7 +13,7 @@ public class FiguurApp {
     private ObservableList<String> mogelijkeFiguren;
 
     public FiguurApp(GridPane root) {
-        mogelijkeFiguren = FXCollections.observableArrayList("Cirkel","Rechthoek");
+        mogelijkeFiguren = FXCollections.observableArrayList("Cirkel","Rechthoek", "Driehoek");
         keuzeMenu = new ComboBox(mogelijkeFiguren);
         root.add(keuzeMenu,0,0);
         keuzeMenu.setOnAction(eventKeuze -> {
@@ -23,6 +24,9 @@ public class FiguurApp {
 
                 } else if (keuzeMenu.getValue().equals("Rechthoek")) {
                     new RechthoekApp(root);
+                }
+                else if (keuzeMenu.getValue().equals("Driehoek")) {
+                    new DriehoekApp(root);
                 }
 
             }

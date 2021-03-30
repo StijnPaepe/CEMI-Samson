@@ -1,5 +1,6 @@
 package ui;
 
+import domain.DomainException;
 import domain.Punt;
 import domain.Rechthoek;
 import javafx.scene.control.Alert;
@@ -17,13 +18,13 @@ public class RechthoekApp {
     private Rechthoek rechthoek;
 
     public RechthoekApp(GridPane root) {
-        invoerXLabel =  new Label("Geef de x-coördinaat van de linkerbovenhoek van de rechthoek");
+        invoerXLabel =  new Label("Geef de x-coördinaat van de linkerbovenhoek van de rechthoek ");
         invoerX= new TextField();
-        invoerYLabel = new Label("Geef de y-coördinaat van de linkerbovenhoek van de rechthoek");
+        invoerYLabel = new Label("Geef de y-coördinaat van de linkerbovenhoek van de rechthoek ");
         invoerY = new TextField();
-        invoerBreedteLabel =  new Label("Geef de breedte van de rechthoek");
+        invoerBreedteLabel =  new Label("Geef de breedte van de rechthoek ");
         invoerBreedte= new TextField();
-        invoerHoogteLabel = new Label("Geef de hoogte van de rechthoek");
+        invoerHoogteLabel = new Label("Geef de hoogte van de rechthoek ");
         invoerHoogte = new TextField();
 
         root.add(invoerXLabel,0,0);
@@ -63,10 +64,10 @@ public class RechthoekApp {
                 root.add(invoerHoogteLabel, 0, 2);
                 root.add(invoerHoogte, 1, 2);
             }
-            catch(NumberFormatException e){
+            catch(DomainException e){
                 invoerBreedte.clear();
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("breedte moet een geheel getal zijn");
+                foutenboodschap.setContentText(e.getMessage());
                 foutenboodschap.showAndWait();
             }
         });
@@ -80,12 +81,10 @@ public class RechthoekApp {
                 Text uitvoer = new Text();
                 uitvoer.setText(rechthoek.toString());
                 root.add(uitvoer, 0, 0);
-            } catch(NumberFormatException e){
-
+            } catch(DomainException e){
                 invoerHoogte.clear();
-
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("hoogte moet een geheel getal zijn");
+                foutenboodschap.setContentText(e.getMessage());
                 foutenboodschap.showAndWait();
             }
         });
