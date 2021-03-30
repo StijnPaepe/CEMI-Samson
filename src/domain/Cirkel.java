@@ -5,12 +5,12 @@ public class Cirkel extends Vorm{
     private int radius;
 
     public void setMiddelpunt(Punt middelpunt) {
-        if (middelpunt == null || middelpunt.getX() == 0 && middelpunt.getY() == 0) throw new IllegalArgumentException();
+        if (middelpunt == null) throw new DomainException("Middelpunt mag niet null zijn.");
         this.middelpunt = middelpunt;
     }
 
     public void setRadius(int radius) {
-        if (radius <= 0) throw new IllegalArgumentException();
+        if (radius <= 0) throw new DomainException("Straal moet positief zijn.");
         this.radius = radius;
     }
 

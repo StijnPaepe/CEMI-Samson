@@ -22,17 +22,17 @@ public class CirkelTest {
 
     }
 
-   @Test(expected = IllegalArgumentException.class)
+   @Test(expected = DomainException.class)
     public void test_Cirkel_metMiddelpuntIsNull_GooiIllegalArgumentException(){
         new Cirkel(null, geldigRadius);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DomainException.class)
     public void test_Cirkel_metNegatieveStraal_GooiIllegalArgumentException(){
         new Cirkel(geldigMiddelpunt, -4);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DomainException.class)
     public void test_Cirkel_metStraalIs0_GooiIllegalArgumentException(){
         new Cirkel(geldigMiddelpunt, 0);
     }

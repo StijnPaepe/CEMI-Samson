@@ -42,9 +42,9 @@ public class DriehoekTest {
 
     @Test
     public void Driehoek_moet_punten_correct_sorteren() {
-        assertEquals("Driehoek: hoekpunt1:(10, 20) - hoekpunt2:(20, 40) - hoekpunt3:(190, 30)", new Driehoek(punt3, punt2, punt1).toString());
-        assertEquals("Driehoek: hoekpunt1:(10, 20) - hoekpunt2:(20, 40) - hoekpunt3:(190, 30)", new Driehoek(punt1, punt2, punt3).toString());
-        assertEquals("Driehoek: hoekpunt1:(10, 10) - hoekpunt2:(10, 20) - hoekpunt3:(20, 40)", new Driehoek(zelfdeXAlsPunt1, punt2, punt1).toString());
+        assertEquals("Driehoek: hoekpunt1: (10, 20) - hoekpunt2: (20, 40) - hoekpunt3: (190, 30)", new Driehoek(punt3, punt2, punt1).toString());
+        assertEquals("Driehoek: hoekpunt1: (10, 20) - hoekpunt2: (20, 40) - hoekpunt3: (190, 30)", new Driehoek(punt1, punt2, punt3).toString());
+        assertEquals("Driehoek: hoekpunt1: (10, 10) - hoekpunt2: (10, 20) - hoekpunt3: (20, 40)", new Driehoek(zelfdeXAlsPunt1, punt2, punt1).toString());
     }
 
     @Test
