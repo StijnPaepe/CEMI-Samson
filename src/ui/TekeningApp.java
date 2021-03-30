@@ -1,11 +1,10 @@
-package ui.tijdelijk;
+package ui;
 
 import domain.Tekening;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import ui.tijdelijk.VormMakenApp;
 
 public class TekeningApp {
     private Label naamTekeningLabel;
@@ -48,26 +47,23 @@ public class TekeningApp {
         keuzeMenu.setOnAction(eventKeuze -> {
             uitvoer.setVisible(false);
             if (keuzeMenu.getValue() != null) {
-
-                if (keuzeMenu.getValue().equals("Vorm maken")) {
-                    keuzeMenu.setValue("");
-                    new VormMakenApp(root, tekening);
-
-                } else if (keuzeMenu.getValue().equals("Tekening tonen")) {
-                    keuzeMenu.setValue("");
-                    uitvoer.setPrefRowCount(tekening.getAantalVormen()*2);
-                    uitvoer.setText(tekening.toString());
-                    uitvoer.setVisible(true);
-
-
-                } else if (keuzeMenu.getValue().equals("stop")) {
-
+                switch (keuzeMenu.getValue()) {
+                    case "Vorm maken":
+                        keuzeMenu.setValue("");
+                        new VormMakenApp(root, tekening);
+                        break;
+                    case "Tekening tonen":
+                        keuzeMenu.setValue("");
+                        uitvoer.setPrefRowCount(tekening.getAantalVormen() * 2);
+                        uitvoer.setText(tekening.toString());
+                        uitvoer.setVisible(true);
+                        break;
+                    case "stop":
+                        break;
                 }
 
             }
         });
-
-
     }
 
     public void toonWaarschuwing(String s){

@@ -11,7 +11,7 @@ public class FxSpelerApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
-        Scene scene = new Scene(root, 500,50);
+        Scene scene = new Scene(root, 500,300);
 
         new SpelerApp(root);
 

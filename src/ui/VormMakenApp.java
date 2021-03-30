@@ -1,4 +1,4 @@
-package ui.tijdelijk;
+package ui;
 
 import domain.Tekening;
 import javafx.collections.FXCollections;
@@ -6,9 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.GridPane;
 import ui.CirkelApp;
-import ui.tijdelijk.DriehoekApp;
-import ui.tijdelijk.LijnstukApp;
-import ui.tijdelijk.RechthoekApp;
+import ui.DriehoekApp;
+import ui.LijnstukApp;
+import ui.RechthoekApp;
 
 public class VormMakenApp {
     private GridPane root;
@@ -26,7 +26,6 @@ public class VormMakenApp {
                     if (keuzeMenu.getValue() != null) {
                         if (keuzeMenu.getValue().equals("Cirkel")) {
                             new CirkelApp(root, tekening);
-
                         } else if (keuzeMenu.getValue().equals("Rechthoek")) {
                             new RechthoekApp(root, tekening);
 

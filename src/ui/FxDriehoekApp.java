@@ -1,10 +1,10 @@
-package ui.tijdelijk;
+package ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import ui.tijdelijk.DriehoekApp;
+import ui.DriehoekApp;
 
 public class FxDriehoekApp extends Application {
 

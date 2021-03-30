@@ -28,7 +28,7 @@ public class CirkelApp {
                 uitvoer.setText(vorm.toString());
                 root.add(uitvoer,0,0);
 
-            }catch (NumberFormatException ne){
+            } catch (NumberFormatException ne){
                 invoerStraal.clear();
                 foutenboodschap.setTitle("Warning");
                 foutenboodschap.setContentText("straal van de cirkel moet een geheel getal zijn");

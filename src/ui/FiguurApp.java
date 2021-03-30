@@ -1,10 +1,13 @@
-package ui.tijdelijk;
+package ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import ui.CirkelApp;
+import ui.DriehoekApp;
+import ui.LijnstukApp;
+import ui.RechthoekApp;
 
 public class FiguurApp {
     private ComboBox<String> keuzeMenu;
@@ -19,7 +22,6 @@ public class FiguurApp {
             if (keuzeMenu.getValue()!=null){
                 if (keuzeMenu.getValue().equals("Cirkel")) {
                     new CirkelApp(root);
-
                 } else if (keuzeMenu.getValue().equals("Rechthoek")) {
                     new RechthoekApp(root);
                 }

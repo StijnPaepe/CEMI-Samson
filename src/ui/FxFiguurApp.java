@@ -1,4 +1,4 @@
-package ui.tijdelijk;
+package ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
