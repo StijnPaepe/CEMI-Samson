@@ -1,4 +1,4 @@
-package ui;
+package ui.tijdelijk;
 
 import domain.*;
 import javafx.scene.control.Alert;
@@ -73,10 +73,10 @@ public class CirkelApp {
     }
 
     private void init(GridPane root, int teller){
-        invoerXLabel =  new Label("Geef de x-coÃ¶rdinaat van het middelpunt van de cirkel ");
+        invoerXLabel =  new Label("Geef de x-coördinaat van het middelpunt van de cirkel ");
         invoerX= new TextField();
 
-        invoerYLabel = new Label("Geef de y-coÃ¶rdinaat van het middelpunt van de cirkel ");
+        invoerYLabel = new Label("Geef de y-coördinaat van het middelpunt van de cirkel ");
         invoerY = new TextField();
 
         invoerStraalLabel = new Label("Geef de straal van de cirkel");
@@ -94,7 +94,7 @@ public class CirkelApp {
             catch(NumberFormatException e){
                 invoerX.clear();
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("x coÃ¶rdinaat van middelpunt van de cirkel moet een geheel getal zijn");
+                foutenboodschap.setContentText("x coördinaat van middelpunt van de cirkel moet een geheel getal zijn");
                 foutenboodschap.showAndWait();
             }
 
@@ -108,7 +108,7 @@ public class CirkelApp {
             } catch (NumberFormatException e){
                 invoerY.clear();
                 foutenboodschap.setTitle("Warning");
-                foutenboodschap.setContentText("y coÃ¶rdinaat van middelpunt van de cirkel moet een geheel getal zijn");
+                foutenboodschap.setContentText("y coördinaat van middelpunt van de cirkel moet een geheel getal zijn");
                 foutenboodschap.showAndWait();
 
             }

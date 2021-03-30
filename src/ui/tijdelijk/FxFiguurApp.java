@@ -1,9 +1,10 @@
-package ui;
+package ui.tijdelijk;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import ui.tijdelijk.FiguurApp;
 
 public class FxFiguurApp extends Application {
 
