@@ -1,10 +1,8 @@
 package domain;
 
-import java.util.Objects;
-
 public class Punt {
-
-    private int x, y;
+    private final int x;
+    private final int y;
 
     public Punt(int x, int y) {
         this.x = x;
@@ -15,12 +13,17 @@ public class Punt {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
+    }
+
+    public int compareTo(Punt punt) {
+        if (getX() < punt.getX()) return 1;
+        else if (getX() ==  punt.getX()) {
+            if (getY() < punt.getY()) return 1;
+            else return 2;
+        }
+        else return 2;
     }
 
     @Override
@@ -28,16 +31,12 @@ public class Punt {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Punt punt = (Punt) o;
-        return x == punt.x &&
-                y == punt.y;
+        return x == punt.x && y == punt.y;
     }
 
     @Override
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
-    
-    public void setY(int y) {
-        this.y = y;
-    }
+
 }

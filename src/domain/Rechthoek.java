@@ -1,9 +1,9 @@
 package domain;
 
-public class Rechthoek {
-    private int breedte;
-    private int hoogte;
-    private Punt linkerBovenHoek;
+public class Rechthoek extends Vorm {
+    private final int breedte;
+    private final int hoogte;
+    private final Punt linkerBovenHoek;
 
     public Rechthoek(Punt linkerBovenHoek, int breedte, int hoogte) {
         if (linkerBovenHoek == null) throw new DomainException("linkerbovenhoek mag niet null zijn");
@@ -35,6 +35,6 @@ public class Rechthoek {
 
     @Override
     public String toString() {
-        return "Rechthoek: ";
+        return "Rechthoek: linkerbovenhoek: " + getLinkerBovenhoek().toString() + " - breedte: " + getBreedte() + " - hoogte: " + getHoogte();
     }
 }

@@ -1,11 +1,11 @@
 package domain;
 
 public class Speler {
-    private String naam;
+    private final String naam;
     private int score;
 
     public Speler(String naam){
-        if (naam == null || naam.trim().isEmpty()) throw new DomainException("naam is null of bestaat uit enkel spaties");
+        if (naam == null || naam.trim().isEmpty()) throw new DomainException("De naam van de speler is niet correct.\nDe naam moet minstens 1 niet spatie bevatten.");
         this.naam = naam;
         this.score = 0;
     }
