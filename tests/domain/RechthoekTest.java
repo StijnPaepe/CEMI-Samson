@@ -82,4 +82,12 @@ public class RechthoekTest {
     public void equals_moet_false_teruggeven_als_parameter_null(){
         assertFalse(rechthoek.equals(null));
     }
+
+    @Test
+    public void verwachte_rechthoek_moet_zelfde_zijn_als_actuele_rechthoek(){
+        Rechthoek verwacht = new Rechthoek(linkerBovenhoek, breedte, hoogte);
+        assertEquals(verwacht.getLinkerBovenhoek(), this.linkerBovenhoek);
+        assertEquals(verwacht.getBreedte(), this.breedte);
+        assertEquals(verwacht.getHoogte(), this.hoogte);
+    }
 }
