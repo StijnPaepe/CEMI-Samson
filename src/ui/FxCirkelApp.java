@@ -1,4 +1,4 @@
-package ui.tijdelijk;
+package ui;
 
 import domain.DomainException;
 import javafx.application.Application;

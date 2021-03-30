@@ -5,16 +5,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class FxPuntApp extends Application {
+public class FxDriehoekApp extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
-        Scene scene = new Scene(root,500,100);
-        new PuntApp(root);
+        Scene scene = new Scene(root, 500,300);
+
+        new DriehoekApp(root);
+
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Punt App");
+        primaryStage.setTitle("Driehoek App");
         primaryStage.show();
     }
 
@@ -22,3 +24,4 @@ public class FxPuntApp extends Application {
         launch(args);
     }
 }
+

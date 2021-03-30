@@ -46,8 +46,8 @@ public class LijnstukApp {
         invoerStartY.setOnAction(eventIngaveX ->{
             try {
                 Integer.parseInt(invoerStartY.getText());
-                root.add(invoerEindXLabel, 0, 1);
-                root.add(invoerEindX, 1, 1);
+                root.add(invoerEindXLabel, 0, 2);
+                root.add(invoerEindX, 1, 2);
             }
             catch(NumberFormatException e){
                 invoerStartY.clear();
@@ -60,8 +60,8 @@ public class LijnstukApp {
         invoerEindX.setOnAction(eventIngaveX ->{
             try {
                 Integer.parseInt(invoerEindX.getText());
-                root.add(invoerEindYLabel, 0, 1);
-                root.add(invoerEindY, 1, 1);
+                root.add(invoerEindYLabel, 0, 3);
+                root.add(invoerEindY, 1, 3);
             }
             catch(NumberFormatException e){
                 invoerEindX.clear();

@@ -83,6 +83,6 @@ public class Driehoek extends Vorm{
 
     @Override
     public String toString() {
-        return "Driehoek: hoekpunt1:" + hoekpunt1.toString() + " - hoekpunt2:" + hoekpunt2.toString() + " - hoekpunt3:" + hoekpunt3.toString();
+        return "Driehoek: hoekpunt1: " + hoekpunt1.toString() + " - hoekpunt2: " + hoekpunt2.toString() + " - hoekpunt3: " + hoekpunt3.toString();
     }
 }
