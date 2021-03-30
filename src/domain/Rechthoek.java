@@ -25,12 +25,8 @@ public class Rechthoek extends Vorm {
         return linkerBovenHoek;
     }
 
-    public String getOmhullende(){
-         String result = "Rechthoek: positie: (" + linkerBovenHoek.getX() + ","
-                    + linkerBovenHoek.getY() + ") - breedte: " + getBreedte() + " - hoogte: " + getHoogte() +
-                    "\nOmhullende: (" + linkerBovenHoek.getX() + ","
-                    + linkerBovenHoek.getY() + " - " + getBreedte() + " - " + getHoogte();
-         return result;
+    public Omhullende getOmhullende() {
+         return new Omhullende(getLinkerBovenhoek(), getBreedte(), getHoogte());
     }
 
     @Override
@@ -43,6 +39,6 @@ public class Rechthoek extends Vorm {
 
     @Override
     public String toString() {
-        return "Rechthoek: linkerbovenhoek: " + getLinkerBovenhoek().toString() + " - breedte: " + getBreedte() + " - hoogte: " + getHoogte();
+        return "Rechthoek: linkerbovenhoek: " + getLinkerBovenhoek().toString() + " - breedte: " + getBreedte() + " - hoogte: " + getHoogte() + "\n" + getOmhullende().toString();
     }
 }

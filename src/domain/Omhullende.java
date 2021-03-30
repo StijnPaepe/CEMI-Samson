@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Objects;
-
 public class Omhullende {
     private Punt linkerBovenhoek;
     private int breedte, hoogte;
@@ -18,7 +16,7 @@ public class Omhullende {
 
     public void setLinkerBovenhoek(Punt linkerBovenhoek) {
         if (linkerBovenhoek == null ){
-            throw new DomainException("Linkebovenhoek is leeg");
+            throw new DomainException("Linkerbovenhoek is leeg");
         }
         this.linkerBovenhoek = linkerBovenhoek;
     }
@@ -69,9 +67,6 @@ public class Omhullende {
 
     @Override
     public String toString() {
-        return "Omhullende: " +
-                "(linkerBovenhoek=)" + linkerBovenhoek + ")" +
-                " - " + breedte +
-                " - " + hoogte ;
+        return "Omhullende: " + linkerBovenhoek.toString() + " -  breedte: " + breedte + " - hoogte: " + hoogte ;
     }
 }

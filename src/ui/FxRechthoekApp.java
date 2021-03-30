@@ -6,8 +6,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class FxRechthoekApp extends Application {
-
-
     @Override
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
