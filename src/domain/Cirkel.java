@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Objects;
-
 public class Cirkel {
     private Punt middelpunt;
     private int radius;
@@ -34,15 +32,11 @@ public class Cirkel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cirkel cirkel = (Cirkel) o;
-        return radius == cirkel.radius &&
-                Objects.equals(middelpunt, cirkel.middelpunt);
+        return radius == cirkel.radius && middelpunt.equals(cirkel.getMiddelpunt());
     }
 
     @Override
     public String toString() {
-        return "Cirkel{" +
-                "middelpunt=" + middelpunt +
-                ", radius=" + radius +
-                '}';
+        return "Cirkel: middelpunt: " + middelpunt.toString() + " - straal: " + radius;
     }
 }

@@ -1,9 +1,7 @@
 package ui;
 
-import domain.DomainException;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
