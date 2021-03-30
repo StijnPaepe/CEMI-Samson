@@ -42,7 +42,7 @@ public class Driehoek extends Vorm{
         this.hoekpunt3 = hoekpunt3;
     }
 
-    private boolean liggenOp1Lijn(Punt punt1, Punt punt2, Punt punt3) {
+    private static boolean liggenOp1Lijn(Punt punt1, Punt punt2, Punt punt3) {
         return (punt2.getX() - punt1.getX()) * (punt3.getY() - punt1.getY()) == (punt3.getX() - punt1.getX()) * (punt2.getY() - punt1.getY());
     }
 
