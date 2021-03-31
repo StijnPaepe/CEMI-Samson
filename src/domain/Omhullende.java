@@ -44,15 +44,17 @@ public class Omhullende {
     }
 
     public int getMinimumX(){
-
         return linkerBovenhoek.getX();
     }
+
     public int getMinimumY(){
         return linkerBovenhoek.getY();
     }
+
     public int getMaximumX(){
         return linkerBovenhoek.getX() + breedte ;
     }
+
     public int getMaximumY(){
         return linkerBovenhoek.getY() + hoogte;
     }

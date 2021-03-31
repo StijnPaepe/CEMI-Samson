@@ -58,4 +58,11 @@ public class CirkelTest {
         assertNotEquals(cirkel1, cirkel2);
     }
 
+    @Test
+    public void test_getOmhullende_geeftCorrectOmhullendeFiguur() {
+        Cirkel cirkel = new Cirkel(new Punt(200, 200), 20);
+        Omhullende omhullende = cirkel.getOmhullende();
+        assertEquals(new Omhullende(new Punt(180, 220), 40, 40), omhullende);
+    }
+
 }

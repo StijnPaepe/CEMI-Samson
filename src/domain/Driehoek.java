@@ -15,7 +15,6 @@ public class Driehoek extends Vorm{
         setHoekpunt2(hoekpunt2);
         setHoekpunt3(hoekpunt3);
         sorteerHoekpunten();
-
     }
 
     public Punt getHoekpunt1() {
@@ -83,6 +82,31 @@ public class Driehoek extends Vorm{
 
     @Override
     public String toString() {
-        return "Driehoek: hoekpunt1: " + hoekpunt1.toString() + " - hoekpunt2: " + hoekpunt2.toString() + " - hoekpunt3: " + hoekpunt3.toString();
+        return "Driehoek: hoekpunt1: " + hoekpunt1.toString() + " - hoekpunt2: " + hoekpunt2.toString() + " - hoekpunt3: " + hoekpunt3.toString() + super.toString();
+    }
+
+    @Override
+    public Omhullende getOmhullende() {
+        int grootsteX, grootsteY, kleinsteX, kleinsteY;
+        kleinsteX = getHoekpunt1().getX();
+        grootsteX = getHoekpunt3().getX();
+        if (getHoekpunt1().getY() >= getHoekpunt2().getY() && getHoekpunt1().getY() >= getHoekpunt3().getY()) {
+            grootsteY = getHoekpunt1().getY();
+        } else if (getHoekpunt2().getY() >= getHoekpunt3().getY()) {
+            grootsteY = getHoekpunt2().getY();
+        } else {
+            grootsteY = getHoekpunt3().getY();
+        }
+        if (getHoekpunt1().getY() <= getHoekpunt2().getY() && getHoekpunt1().getY() <= getHoekpunt3().getY()) {
+            kleinsteY = getHoekpunt1().getY();
+        } else if (getHoekpunt2().getY() <= getHoekpunt3().getY()) {
+            kleinsteY = getHoekpunt2().getY();
+        } else {
+            kleinsteY = getHoekpunt3().getY();
+        }
+        Punt linkerbovenhoek = new Punt(kleinsteX, grootsteY);
+        int breedte = grootsteX - kleinsteX;
+        int hoogte = grootsteY - kleinsteY;
+        return new Omhullende(linkerbovenhoek, breedte, hoogte);
     }
 }

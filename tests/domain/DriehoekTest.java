@@ -74,4 +74,11 @@ public class DriehoekTest {
         assertNotEquals(null, drieHoek);
     }
 
+    @Test
+    public void test_getOmhullende_geeftCorrectOmhullendeFiguur() {
+        Driehoek driehoek = new Driehoek(new Punt(100, 200), new Punt(300, 200), new Punt(200, 100));
+        Omhullende omhullende = driehoek.getOmhullende();
+        assertEquals(new Omhullende(new Punt(100, 200), 200, 100), omhullende);
+    }
+
 }
