@@ -1,6 +1,10 @@
 package domain;
 
-public class Driehoek extends Vorm{
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polyline;
+
+public class Driehoek extends Vorm implements Drawable{
     private Punt hoekpunt1;
     private Punt hoekpunt2;
     private Punt hoekpunt3;
@@ -108,5 +112,14 @@ public class Driehoek extends Vorm{
         int breedte = grootsteX - kleinsteX;
         int hoogte = grootsteY - kleinsteY;
         return new Omhullende(linkerbovenhoek, breedte, hoogte);
+    }
+
+    @Override
+    public void teken(Pane root) {
+        Polyline driehoek = new Polyline();
+        driehoek.setFill(Color.WHITE);
+        driehoek.setStroke(Color.BLACK);
+        driehoek.getPoints().addAll(new Double[]{(double) getHoekpunt1().getX(), (double) getHoekpunt1().getY(), (double) getHoekpunt2().getX(), (double) getHoekpunt2().getY(), (double) getHoekpunt3().getX(), (double) getHoekpunt3().getY()});
+        root.getChildren().addAll(driehoek);
     }
 }

@@ -1,6 +1,13 @@
 package domain;
 
-public class Cirkel extends Vorm{
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polyline;
+import javafx.scene.shape.Rectangle;
+
+public class Cirkel extends Vorm implements Drawable {
     private Punt middelpunt;
     private int radius;
 
@@ -44,5 +51,13 @@ public class Cirkel extends Vorm{
     public Omhullende getOmhullende() {
         Punt linkerbovenhoek = new Punt(getMiddelpunt().getX() - getRadius(), getMiddelpunt().getY() + getRadius());
         return new Omhullende(linkerbovenhoek, getRadius() * 2, getRadius() * 2);
+    }
+
+    @Override
+    public void teken(Pane root) {
+        Circle nieuw = new Circle(getMiddelpunt().getX(), getMiddelpunt().getY(), getRadius());
+        nieuw.setFill(Color.WHITE);
+        nieuw.setStroke(Color.BLACK);
+        root.getChildren().addAll(nieuw);
     }
 }
