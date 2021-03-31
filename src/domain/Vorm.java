@@ -1,6 +1,5 @@
 package domain;
 
-
 import javafx.scene.paint.Color;
 
 public abstract class Vorm {
@@ -20,5 +19,4 @@ public abstract class Vorm {
     public String toString() {
         return "\n" + getOmhullende().toString();
     };
-
 }
