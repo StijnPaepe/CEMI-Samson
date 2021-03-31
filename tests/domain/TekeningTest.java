@@ -113,6 +113,18 @@ public class TekeningTest {
         huis.voegToe(gebouw);
     }
 
+    @Test (expected = DomainException.class)
+    public void test_VoegToe_MinimumXOmhullendeIsKleinerDanMinimumXtekening_GooiDomainException(){
+        Tekening huis = new Tekening("huis");
+        huis.voegToe(new Cirkel(new Punt(5,5),10));
+    }
+
+    @Test (expected = DomainException.class)
+    public void test_VoegToe_MaximumXOmhullendeIsGroterDanMaximumXtekening_GooiDomainException(){
+        Tekening huis = new Tekening("huis");
+        huis.voegToe(new Cirkel(new Punt(5,5),10));
+    }
+
     @Test
     public void test_VoegToe_Met_CorrecteWaarden(){
         Tekening huis = new Tekening("huis");

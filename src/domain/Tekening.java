@@ -2,9 +2,10 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Tekening {
-    private final String naam;
+    private String naam;
     private List<Vorm> vormen;
     public static final int MIN_X = 0;
     public static final int MIN_Y = 0;
@@ -50,12 +51,9 @@ public class Tekening {
 
     @Override
     public String toString() {
-        String result = "Tekening: naam: " + naam;
-        for (Vorm vorm :  vormen) {
-            result += "\n\t";
-            result += vorm.toString();
-        }
-        return result;
+        return "Tekening:" +
+                "naam:" + naam +
+                " - vormen:" + vormen;
     }
 
     public boolean bevat(Vorm vorm) {
@@ -68,8 +66,13 @@ public class Tekening {
     }
 
     public void voegToe(Vorm vorm) {
-        if(vorm == null) throw new DomainException("vorm mag niet gelijk zijn null");
-        if(vormen.contains(vorm)) throw new DomainException("vorm bestaat al in tekening");
+        if( vorm == null) throw new DomainException("vorm mag niet gelijk zijn null");
+        if(vormen.contains(vorm)) throw new DomainException(" vorm bestaat al in tekening");
+
+        if(vorm.getOmhullende().getMinimumX() < MIN_X || vorm.getOmhullende().getMinimumY() < MIN_Y
+        ||vorm.getOmhullende().getMaximumX() > MAX_X ||vorm.getOmhullende().getMaximumY() > MAX_Y)
+            throw new DomainException("vorm past niet in de tekening");
+
         vormen.add(vorm);
     }
 }
