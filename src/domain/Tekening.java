@@ -7,18 +7,11 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-<<<<<<< HEAD
 public class Tekening implements Drawable {
-    private final String naam;
-=======
-public class Tekening {
     private String naam;
->>>>>>> 521f1fb638ed12f0029b5a90bcbb353d364a0dba
     private List<Vorm> vormen;
     public static final int MIN_X = 0;
     public static final int MIN_Y = 0;
@@ -45,7 +38,7 @@ public class Tekening {
 
     public Vorm getVorm(int cijfer) {
         if(cijfer < 0) throw new DomainException(" cijfer mag niet negatief zijn");
-        if(cijfer > getAantalVormen() - 1) throw new DomainException(" cijfer mag niet groter zijn");
+        if(cijfer > getAantalVormen() - 1) throw new DomainException(" cijfer mag niet groter dan het aantal vormen zijn");
         return vormen.get(cijfer);
     }
 
@@ -63,18 +56,12 @@ public class Tekening {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
         StringBuilder result = new StringBuilder("Tekening: naam: " + naam);
         for (Vorm vorm :  vormen) {
             result.append("\n\t");
             result.append(vorm.toString());
         }
         return result.toString();
-=======
-        return "Tekening:" +
-                "naam:" + naam +
-                " - vormen:" + vormen;
->>>>>>> 521f1fb638ed12f0029b5a90bcbb353d364a0dba
     }
 
     public boolean bevat(Vorm vorm) {
@@ -89,11 +76,9 @@ public class Tekening {
     public void voegToe(Vorm vorm) {
         if( vorm == null) throw new DomainException("vorm mag niet gelijk zijn null");
         if(vormen.contains(vorm)) throw new DomainException(" vorm bestaat al in tekening");
-
-        if(vorm.getOmhullende().getMinimumX() < MIN_X || vorm.getOmhullende().getMinimumY() < MIN_Y
-        ||vorm.getOmhullende().getMaximumX() > MAX_X ||vorm.getOmhullende().getMaximumY() > MAX_Y)
+        if(vorm.getOmhullende().getMinimumX() < MIN_X || vorm.getOmhullende().getMinimumY() < MIN_Y ||vorm.getOmhullende().getMaximumX() > MAX_X ||vorm.getOmhullende().getMaximumY() > MAX_Y) {
             throw new DomainException("vorm past niet in de tekening");
-
+        }
         vormen.add(vorm);
     }
 

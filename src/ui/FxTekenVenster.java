@@ -3,10 +3,8 @@ package ui;
 import domain.Tekening;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class FxTekenVenster extends Application {
@@ -16,7 +14,7 @@ public class FxTekenVenster extends Application {
     @Override
     public void start(Stage primaryStage) {
         GridPane root = new GridPane();
-        Scene scene = new Scene(root,1000,1000);
+        Scene scene = new Scene(root,400,400);
         invoerNaam = new TextField("Geef de naam van de tekening");
         root.getChildren().add(invoerNaam);
 
