@@ -5,6 +5,7 @@
 <html lang="nl">
 <head>
     <title>Woordenlijst</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <jsp:include page="header.jsp">
@@ -17,9 +18,9 @@
             <table>
                 <thead>
                 <tr>
-                    <th>woord</th>
-                    <th>niveau</th>
-                    <th>verwijder</th>
+                    <th id="woord">woord</th>
+                    <th id="niveau">niveau</th>
+                    <th id="verwijder">verwijder</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,16 +36,20 @@
         </div>
         </c:when>
         <c:otherwise>
-            <p>er zijn momenteel geen woorden.</p>
+            <article>
+                <p>er zijn momenteel geen woorden.</p>
+            </article>
         </c:otherwise>
     </c:choose>
-    <p><a href="Servlet?command=download">Download woordenlijst</a></p>
-    <h2>Filters</h2>
-    <ul>
-        <li><a href="Servlet?command=overview">alles</a></li>
-        <li><a href="Servlet?command=overview&filter=beginner">beginner</a></li>
-        <li><a href="Servlet?command=overview&filter=expert">expert</a></li>
-    </ul>
+    <article>
+        <p><a href="Servlet?command=download">Download woordenlijst</a></p>
+        <h2>Filters</h2>
+        <ul>
+            <li><a href="Servlet?command=overview">alles</a></li>
+            <li><a href="Servlet?command=overview&filter=beginner">beginner</a></li>
+            <li><a href="Servlet?command=overview&filter=expert">expert</a></li>
+        </ul>
+    </article>
 </main>
 </body>
 </html>

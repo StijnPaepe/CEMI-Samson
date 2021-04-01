@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    display: none;
+}
+
+/* basics */
+
+body {
+    background-color: #f1f2f2;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+main {
+    max-width: 90rem;
+    margin: 0 auto !important;
+}
+
+
+img {
+    width: calc(100% - 2rem);
+    margin: 0.5rem 1rem 0;
+}
+
+/* header, footer */
+
+header, footer {
+    background-color: #f5d1c9;
+    padding: 1rem;
+}
+
+footer {
+    text-align: center;
+    clear: right;
+}
+
+/* navigatie */
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+    border-bottom: 4px solid #f5d1c9;
+    transition: border-bottom-color 0.6s ease-in;
+}
+
+nav ul li a:hover {
+    border-bottom-color: #333;
+}
+
+#actual {
+    font-weight: 700;
+}
+
+/* text */
+
+a {
+    color: #987169;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+article {
+    margin: 0.5rem 1rem;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+/* form */
+
+form p {
+    margin: 0.5rem 1rem;
+}
+
+form label {
+    margin-left: 1rem;
+}
+
+form input {
+    margin: 0.5rem 1rem;
+    width: calc(100% - 3rem);
+}
+
+.voegToe form select, .voegToe form input[type = submit], .zoek form select, .zoek form input[type = submit] {
+    margin: 0.5rem 1rem;
+    width: calc(100% - 2rem);
+}
+
+form input[type = submit] {
+    background-color: #f5d1c9;
+}
+
+.bevestiging form input[type = submit] {
+    width: 8rem;
+}
+
+form input, form select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #f5d1c9;
+}
+
+/* table */
+
+.table {
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem;
+    overflow-x: auto
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    margin: 0.5rem
+}
+
+th, td {
+    text-align: left;
+    vertical-align: center;
+    padding-bottom: 0.5rem;
+}
+
+table #woord, table #niveau {
+    width: 10rem;
+}
+
+table table #verwijder {
+    width: 5rem;
+}

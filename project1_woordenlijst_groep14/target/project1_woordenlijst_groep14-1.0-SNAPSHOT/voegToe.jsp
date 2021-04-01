@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Woord toevoegen</title>
-
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
