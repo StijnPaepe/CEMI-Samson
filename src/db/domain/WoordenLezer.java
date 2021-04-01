@@ -23,4 +23,8 @@ public class WoordenLezer {
     public WoordenLijst getWoordenlijst(){
             return this.lijst;
     }
+
+    public WoordenLijst lees() {
+            return this.lijst;
+    }
 }

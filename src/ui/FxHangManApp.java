@@ -6,18 +6,23 @@ import domain.WoordenLijst;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ui.HangManApp;
+
+import java.io.FileNotFoundException;
 
 public class FxHangManApp extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
-        WoordenLezer woordenlezer = new WoordenLezer("hangman.txt");
+        WoordenLezer woordenlezer = null;
+        try {
+            woordenlezer = new WoordenLezer("hangman.txt");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         WoordenLijst woordenlijst = woordenlezer.lees();
 
         VBox root = new VBox();
@@ -31,7 +36,6 @@ public class FxHangManApp extends Application {
             primaryStage.setTitle(invoerNaam.getText());
             root.getChildren().clear();
             new HangManApp(root,new Speler(invoerNaam.getText()), woordenlijst);
-
         });
 
         primaryStage.show();
