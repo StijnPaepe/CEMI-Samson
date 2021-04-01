@@ -1,6 +1,10 @@
 package domain;
 
-public class Driehoek extends Vorm{
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polyline;
+
+public class Driehoek extends Vorm implements Drawable{
     private Punt hoekpunt1;
     private Punt hoekpunt2;
     private Punt hoekpunt3;
@@ -90,23 +94,25 @@ public class Driehoek extends Vorm{
         int grootsteX, grootsteY, kleinsteX, kleinsteY;
         kleinsteX = getHoekpunt1().getX();
         grootsteX = getHoekpunt3().getX();
+
         if (getHoekpunt1().getY() >= getHoekpunt2().getY() && getHoekpunt1().getY() >= getHoekpunt3().getY()) {
             grootsteY = getHoekpunt1().getY();
-        } else if (getHoekpunt2().getY() >= getHoekpunt3().getY()) {
-            grootsteY = getHoekpunt2().getY();
-        } else {
-            grootsteY = getHoekpunt3().getY();
-        }
+        } else grootsteY = Math.max(getHoekpunt2().getY(), getHoekpunt3().getY());
         if (getHoekpunt1().getY() <= getHoekpunt2().getY() && getHoekpunt1().getY() <= getHoekpunt3().getY()) {
             kleinsteY = getHoekpunt1().getY();
-        } else if (getHoekpunt2().getY() <= getHoekpunt3().getY()) {
-            kleinsteY = getHoekpunt2().getY();
-        } else {
-            kleinsteY = getHoekpunt3().getY();
-        }
+        } else kleinsteY = Math.min(getHoekpunt2().getY(), getHoekpunt3().getY());
         Punt linkerbovenhoek = new Punt(kleinsteX, grootsteY);
         int breedte = grootsteX - kleinsteX;
         int hoogte = grootsteY - kleinsteY;
         return new Omhullende(linkerbovenhoek, breedte, hoogte);
+    }
+
+    @Override
+    public void teken(Pane root) {
+        Polyline driehoek = new Polyline();
+        driehoek.setFill(Color.WHITE);
+        driehoek.setStroke(Color.BLACK);
+        driehoek.getPoints().addAll((double) getHoekpunt1().getX(), (double) getHoekpunt1().getY(), (double) getHoekpunt2().getX(), (double) getHoekpunt2().getY(), (double) getHoekpunt3().getX(), (double) getHoekpunt3().getY());
+        root.getChildren().addAll(driehoek);
     }
 }
