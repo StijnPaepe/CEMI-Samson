@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
-
 public class TekenVenster {
     private TextArea uitvoer;
 
@@ -36,12 +35,12 @@ public class TekenVenster {
                         new VormMakenApp(root, tekening);
                         break;
                     case "Tekening tonen":
+                        keuzeMenu.setValue("");
                         tekening.teken(root);
                         break;
                     case "stop":
                         break;
                 }
-
             }
         });
     }
