@@ -41,9 +41,6 @@ public class WoordRadenApp {
                 throw new UiException("Fout");
             }
 
-
-
-
             if (hintWoord.raad(invoerLetter.getText().charAt(0))){
                 boodschap.setText("Super, doe zo voort!");
             }

@@ -35,7 +35,7 @@ public class FxHangManApp extends Application {
         invoerNaam.setOnAction( eventIngaveNaam -> {
             primaryStage.setTitle(invoerNaam.getText());
             root.getChildren().clear();
-            new HangManApp(root,new Speler(invoerNaam.getText()), woordenlijst);
+            new HangManApp(root, new Speler(invoerNaam.getText()), woordenlijst);
         });
 
         primaryStage.show();
