@@ -2,16 +2,12 @@ package ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.GridPane;
-import ui.CirkelApp;
-import ui.DriehoekApp;
-import ui.LijnstukApp;
-import ui.RechthoekApp;
 
 public class FiguurApp {
-    private ComboBox<String> keuzeMenu;
-    private ObservableList<String> mogelijkeFiguren;
+    private final ComboBox<String> keuzeMenu;
+    private final ObservableList<String> mogelijkeFiguren;
 
     public FiguurApp(GridPane root) {
         mogelijkeFiguren = FXCollections.observableArrayList("Cirkel","Rechthoek", "Driehoek", "Lijnstuk");
@@ -20,16 +16,11 @@ public class FiguurApp {
         keuzeMenu.setOnAction(eventKeuze -> {
             keuzeMenu.setVisible(false);
             if (keuzeMenu.getValue()!=null){
-                if (keuzeMenu.getValue().equals("Cirkel")) {
-                    new CirkelApp(root);
-                } else if (keuzeMenu.getValue().equals("Rechthoek")) {
-                    new RechthoekApp(root);
-                }
-                else if (keuzeMenu.getValue().equals("Driehoek")) {
-                    new DriehoekApp(root);
-                }
-                else if (keuzeMenu.getValue().equals("Lijnstuk")) {
-                    new LijnstukApp(root);
+                switch (keuzeMenu.getValue()) {
+                    case "Cirkel" -> new CirkelApp(root);
+                    case "Rechthoek" -> new RechthoekApp(root);
+                    case "Driehoek" -> new DriehoekApp(root);
+                    case "Lijnstuk" -> new LijnstukApp(root);
                 }
             }
         });

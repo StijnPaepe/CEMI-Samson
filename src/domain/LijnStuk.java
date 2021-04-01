@@ -1,6 +1,9 @@
 package domain;
 
-public class LijnStuk extends Vorm {
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+
+public class LijnStuk extends Vorm implements Drawable {
     private Punt startPunt;
     private Punt eindPunt;
 
@@ -16,7 +19,7 @@ public class LijnStuk extends Vorm {
         return eindPunt;
     }
 
-    public void setStartEnEindPunt(Punt startPunt, Punt eindPunt) {
+    private void setStartEnEindPunt(Punt startPunt, Punt eindPunt) {
         if (startPunt == null) throw new DomainException("Startpunt mag niet null zijn.");
         if (eindPunt == null) throw new DomainException("Eindpunt mag niet null zijn.");
         if (startPunt.equals(eindPunt)) throw new DomainException("Start- en eindpunt mogen niet gelijk zijn.");
@@ -59,5 +62,12 @@ public class LijnStuk extends Vorm {
         int hoogte = grootsteY - kleinsteY;
         Punt linkerbovenhoek = new Punt(kleinsteX, grootsteY);
         return new Omhullende(linkerbovenhoek, breedte, hoogte);
+    }
+
+    @Override
+    public void teken(Pane root) {
+        Line lijnstuk = new Line(getStartPunt().getX(), getStartPunt().getY(), getEindPunt().getX(), getEindPunt().getY());
+        lijnstuk.setStrokeWidth(5);
+        root.getChildren().addAll(lijnstuk);
     }
 }
