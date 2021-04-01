@@ -8,6 +8,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 public class FxWoordRadenApp extends Application {
 
 
@@ -22,7 +24,11 @@ public class FxWoordRadenApp extends Application {
         invoerNaam.setOnAction(eventIngaveNaam -> {
             primaryStage.setTitle(invoerNaam.getText());
             root.getChildren().clear();
-            new WoordRadenApp(root, new Speler(invoerNaam.getText()));
+            try {
+                new WoordRadenApp(root, new Speler(invoerNaam.getText()));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         primaryStage.show();

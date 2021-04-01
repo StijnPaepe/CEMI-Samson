@@ -1,22 +1,26 @@
 
 package db.domain;
 
+import domain.WoordenLijst;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class WoordenLezer {
-    public static void main(String[] args) throws FileNotFoundException {
-
-        File text = new File("C:\\Users\\Thomas\\Documents\\Projectweek2VanProject 1/hangman.txt");
-
+        private WoordenLijst lijst;
+        public WoordenLezer(String  fileNaam) throws FileNotFoundException {
+            this.lijst = new WoordenLijst();
+        File text = new File(fileNaam);
         Scanner scnr = new Scanner(text);
-
-        int lineNumber = 1;
-        while(scnr.hasNextLine()) {
+            while(scnr.hasNextLine()) {
             String line = scnr.nextLine();
-            System.out.println(" " + line);
-            lineNumber++;
+            this.lijst.voegToe(line);
+
         }
+    }
+
+    public WoordenLijst getWoordenlijst(){
+            return this.lijst;
     }
 }
