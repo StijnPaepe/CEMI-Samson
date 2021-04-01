@@ -81,10 +81,10 @@ public class DriehoekApp {
         invoerHoek3YLabel = new Label("Geef de y-coordinaat van het eerste punt ");
         invoerHoek3Y = new TextField();
 
-        root.add(invoerHoek1XLabel,0,0);
-        root.add(invoerHoek1X,1,0);
+        root.add(invoerHoek1XLabel,0, teller);
+        root.add(invoerHoek1X,1, teller);
 
-        invoerHoek1X.setOnAction(eventIngaveX ->{
+        invoerHoek1X.setOnAction(eventIngaveX -> {
             try {
                 Integer.parseInt(invoerHoek1X.getText());
                 root.add(invoerHoek1YLabel, 0, teller + 1);

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Tekening implements Drawable {
     private String naam;
-    private List<Vorm> vormen;
+    protected List<Vorm> vormen;
     public static final int MIN_X = 0;
     public static final int MIN_Y = 0;
     public static final int MAX_X = 399;
@@ -86,27 +86,29 @@ public class Tekening implements Drawable {
     public void teken(Pane root) {
         ArrayList<Object> nieuweVormen = new ArrayList<>();
         for (Vorm vorm : vormen) {
-            if (vorm instanceof Cirkel) {
-                Circle nieuw = new Circle(((Cirkel) vorm).getMiddelpunt().getX(), ((Cirkel) vorm).getMiddelpunt().getY(), ((Cirkel) vorm).getRadius());
-                nieuw.setFill(vorm.getKleur());
-                nieuw.setStroke(Color.BLACK);
-                nieuweVormen.add(nieuw);
-            } else if (vorm instanceof Rechthoek) {
-                Rectangle nieuw = new Rectangle(((Rechthoek) vorm).getLinkerBovenhoek().getX(), ((Rechthoek) vorm).getLinkerBovenhoek().getY(), ((Rechthoek) vorm).getBreedte(), ((Rechthoek) vorm).getHoogte());
-                nieuw.setFill(vorm.getKleur());
-                nieuw.setStroke(Color.BLACK);
-                nieuweVormen.add(nieuw);
-            } else if (vorm instanceof LijnStuk) {
-                Line nieuw = new Line(((LijnStuk) vorm).getStartPunt().getX(), ((LijnStuk) vorm).getStartPunt().getY(), ((LijnStuk) vorm).getEindPunt().getX(), ((LijnStuk) vorm).getEindPunt().getY());
-                nieuw.setStrokeWidth(5);
-                nieuweVormen.add(nieuw);
-            } else {
-                Polyline nieuw = new Polyline();
-                nieuw.setFill(vorm.getKleur());
-                nieuw.setStroke(Color.BLACK);
-                nieuw.getPoints().addAll((double) ((Driehoek) vorm).getHoekpunt1().getX(), (double) ((Driehoek) vorm).getHoekpunt1().getY(), (double) ((Driehoek) vorm).getHoekpunt2().getX(),
-                        (double) ((Driehoek) vorm).getHoekpunt2().getY(), (double) ((Driehoek) vorm).getHoekpunt3().getX(), (double) ((Driehoek) vorm).getHoekpunt3().getY());
+            if (vorm.isZichtbaar()) {
+                if (vorm instanceof Cirkel) {
+                    Circle nieuw = new Circle(((Cirkel) vorm).getMiddelpunt().getX(), ((Cirkel) vorm).getMiddelpunt().getY(), ((Cirkel) vorm).getRadius());
+                    nieuw.setFill(vorm.getKleur());
+                    nieuw.setStroke(Color.BLACK);
+                    nieuweVormen.add(nieuw);
+                } else if (vorm instanceof Rechthoek) {
+                    Rectangle nieuw = new Rectangle(((Rechthoek) vorm).getLinkerBovenhoek().getX(), ((Rechthoek) vorm).getLinkerBovenhoek().getY(), ((Rechthoek) vorm).getBreedte(), ((Rechthoek) vorm).getHoogte());
+                    nieuw.setFill(vorm.getKleur());
+                    nieuw.setStroke(Color.BLACK);
+                    nieuweVormen.add(nieuw);
+                } else if (vorm instanceof LijnStuk) {
+                    Line nieuw = new Line(((LijnStuk) vorm).getStartPunt().getX(), ((LijnStuk) vorm).getStartPunt().getY(), ((LijnStuk) vorm).getEindPunt().getX(), ((LijnStuk) vorm).getEindPunt().getY());
+                    nieuw.setStrokeWidth(5);
+                    nieuweVormen.add(nieuw);
+                } else {
+                    Polyline nieuw = new Polyline();
+                    nieuw.setFill(vorm.getKleur());
+                    nieuw.setStroke(Color.BLACK);
+                    nieuw.getPoints().addAll((double) ((Driehoek) vorm).getHoekpunt1().getX(), (double) ((Driehoek) vorm).getHoekpunt1().getY(), (double) ((Driehoek) vorm).getHoekpunt2().getX(),
+                            (double) ((Driehoek) vorm).getHoekpunt2().getY(), (double) ((Driehoek) vorm).getHoekpunt3().getX(), (double) ((Driehoek) vorm).getHoekpunt3().getY());
 
+                }
             }
         }
 
