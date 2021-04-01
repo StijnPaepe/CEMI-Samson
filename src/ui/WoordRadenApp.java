@@ -18,7 +18,8 @@ public class WoordRadenApp {
         hallo = new Text();
         hallo.setText("Rarara, welk woord zoeken we?");
         root.add(hallo, 0, 1);
-
+        boodschap = new Text();
+        root.add(boodschap, 0, 0);
         woord = new Text();
         woord.setText(hintWoord.toString());
         root.add(woord, 0, 2);
@@ -27,14 +28,13 @@ public class WoordRadenApp {
         invoerLetter = new TextField();
         root.add(invoerLetterLabel, 0, 3);
         root.add(invoerLetter, 0, 4);
+        proficiat = new Text();
+        root.add(proficiat, 0, 5);
 
         invoerLetter.setOnAction(eventIngaveLetter -> {
             if(invoerLetter.getText().length() != 1){
                 throw new UiException("Fout");
             }
-
-
-            boodschap = new Text();
 
             if (hintWoord.raad(invoerLetter.getText().charAt(0))){
                 boodschap.setText("Super, doe zo voort!");
@@ -42,19 +42,15 @@ public class WoordRadenApp {
             else{
                 boodschap.setText("Helaas volgende keer beter!");
             }
-            root.add(boodschap, 0, 0);
+
             invoerLetter.clear();
             woord.setText(hintWoord.toString());
-            root.add(woord, 0, 2);
 
             if(hintWoord.isGeraden()){
-                proficiat = new Text();
+
                 proficiat.setText("Goed gedaan " + speler.getNaam() + "! Je hebt het woord geraden!");
-                root.add(proficiat, 0, 5);
+                invoerLetter.setDisable(true);
             }
         });
     }
-
-
-
 }
