@@ -9,7 +9,6 @@ public class WoordenLijst {
 
     public WoordenLijst() {
         woorden = new ArrayList<>();
-
     }
 
     public void voegToe(String woord) {
@@ -19,7 +18,6 @@ public class WoordenLijst {
     }
 
     public int getAantalWoorden() {
-
         return woorden.size();
     }
 

@@ -5,7 +5,7 @@ import ui.TekeningApp;
 public class TekeningHangMan extends Tekening {
     public TekeningHangMan() {
         super("HangMan");
-        Vorm galgBodem = new Rechthoek(new Punt(10, 350), 300, 40);
+        Vorm galgBodem = new Rechthoek(new Punt(500, 0), 300, 40);
         vormen.add(galgBodem);
         Vorm galgStaaf = new LijnStuk(new Punt(160, 350), new Punt(160, 50));// altijd zichtbaar
         vormen.add(galgStaaf);

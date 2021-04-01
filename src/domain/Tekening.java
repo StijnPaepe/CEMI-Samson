@@ -3,10 +3,8 @@ package domain;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Polyline;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,7 +82,7 @@ public class Tekening implements Drawable {
 
     @Override
     public void teken(Pane root) {
-        ArrayList<Object> nieuweVormen = new ArrayList<>();
+        ArrayList<Shape> nieuweVormen = new ArrayList<>();
         for (Vorm vorm : vormen) {
             if (vorm.isZichtbaar()) {
                 if (vorm instanceof Cirkel) {
@@ -112,8 +110,8 @@ public class Tekening implements Drawable {
             }
         }
 
-        for (Object o : nieuweVormen) {
-            root.getChildren().add((Node) o);
+        for (Shape o : nieuweVormen) {
+            root.getChildren().add(o);
         }
     }
 }

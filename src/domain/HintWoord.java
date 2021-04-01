@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HintWoord {
-
     private List<HintLetter> hintLetters;
 
     public HintWoord(String woord) {
